@@ -1,0 +1,16 @@
+# makes the container available to peer services
+# NOT available as a standalone service as constituted;
+version: '2'
+services:
+  keystone:
+    build:
+      context: .
+      dockerfile: Dockerfiles/keystone.Dockerfile
+    image: styers/keystone:edge
+    container_name: keystone
+  nano:
+    build:
+      context: .
+      dockerfile: Dockerfiles/nano.Dockerfile
+    image: styers/keystone:edge.nano
+    container_name: keystone_nano
