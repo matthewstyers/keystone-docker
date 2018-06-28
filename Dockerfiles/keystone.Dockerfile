@@ -20,4 +20,4 @@ VOLUME /app/keystone
 # build process.
 
 # link we reference when building the dependant image.
-ONBUILD RUN npm link
+# ONBUILD RUN npm link
