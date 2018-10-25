@@ -19,7 +19,7 @@ COPY ./keystone/templates /app/keystone/templates
 WORKDIR /app/keystone
 
 # adds the bare necessities to run npm and installs node_modules
-RUN apk add --no-cache make gcc g++ python git && \
+RUN apk add --no-cache make gcc g++ git python krb5-dev && \
 npm i && \
 npm run build
 
