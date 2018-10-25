@@ -1,8 +1,19 @@
 # uses an alpine linux image with node/npm pre-installed
 FROM mhart/alpine-node:latest
 
-# adds current directory to image at /app/keystone
-ADD . /app
+# copy files
+COPY ./keystone/.babelrc /app/keystone/.babelrc
+COPY ./keystone/build.js /app/keystone/build.js
+COPY ./keystone/index.js /app/keystone/index.js
+COPY ./keystone/package.json /app/keystone/package.json
+ 
+# copy dirs
+COPY ./keystone/admin /app/keystone/admin
+COPY ./keystone/fields /app/keystone/fields
+COPY ./keystone/lib /app/keystone/lib
+COPY ./keystone/server /app/keystone/server
+COPY ./keystone/templates /app/keystone/templates
+
 
 # on build, the working directory will be /app/keystone
 WORKDIR /app/keystone
