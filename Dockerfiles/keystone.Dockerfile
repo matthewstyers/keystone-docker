@@ -1,5 +1,5 @@
 # uses an alpine linux image with node/npm pre-installed
-FROM mhart/alpine-node:latest
+FROM mhart/alpine-node:11
 
 # copy files
 COPY ./keystone/.babelrc /app/keystone/.babelrc
